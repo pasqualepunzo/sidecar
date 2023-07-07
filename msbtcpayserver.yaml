@@ -1,0 +1,31 @@
+  int-dkbtcpayserver: |
+    MYSQL_HOST=q01-stage.db.local
+    MYSQL_DBNAME=theia_btcpayserver_data
+    MYSQL_USER=root
+    MYSQL_PASSWORD=v10l4
+  int-dkbtcpayserver-secrets: |
+    <?php
+    return [
+      'defaultTimeZone' => 'UTC',
+      'localTimeZone' => 'Europe/Rome',
+      'hostname' => 'localhost', // SERVE PER LO SVILUPO
+      // cookie secret
+      'cookieValidationKey' => 'stringa_molto_complessa',
+      // database
+      'db_dsn' => 'mysql:host=q01-stage.db.local;dbname=theia_btcpayserver_data',
+      'db_username' => 'root',
+      'db_password' => 'v10l4',
+      /**
+       * Set the secret for encrypt/decrypt
+       */
+      'secret_hash_key' => 'altra_stringa_molto_complessa',
+      /*
+       * Set console base url
+       */
+      'baseUrl' => 'http://localhost', // non mettere slash alla fine
+      /**
+       * Parametrizzazione società
+       */
+      'webapp_society' => 'Theia Innovtions',
+      'webapp_link' => 'https://theia-innovations.com',
+    ];
